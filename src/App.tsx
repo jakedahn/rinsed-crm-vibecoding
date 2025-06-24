@@ -191,78 +191,41 @@ function App() {
             </div>
 
             {/* Pro Tips */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-2 bg-yellow-50 border-yellow-200">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Lightbulb className="h-5 w-5 text-yellow-600" />
-                    Pro Tips
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm">
-                      The sidebar and header are pre-built — focus on your main
-                      content area
-                    </p>
-                  </div>
-                  <div className="flex gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm">
-                      Describe your feature idea clearly and specifically
-                    </p>
-                  </div>
-                  <div className="flex gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm">
-                      All components use Rinsed's design system automatically
-                    </p>
-                  </div>
-                  <div className="flex gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm">
-                      Be specific about car wash features and terminology
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 bg-blue-50 border-blue-200">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-blue-600" />
-                    Quick Start
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <p className="text-sm font-medium">
-                      Try this example prompt:
-                    </p>
-                    <div className="bg-white p-4 rounded-lg border border-gray-200">
-                      <code className="text-sm block text-gray-700">
-                        "Make a page that helps someone create and schedule a
-                        marketing email with an editor for branding and template
-                        suggestions for car wash promotions."
-                      </code>
-                    </div>
-                    <Button
-                      className="w-full"
-                      onClick={() =>
-                        copyToClipboard(
-                          "Create a dashboard showing today's wash counts by location with member check-ins and revenue metrics.",
-                          -1
-                        )
-                      }
-                    >
-                      <Copy className="h-4 w-4 mr-2" />
-                      Copy Example
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="border-2 bg-yellow-50 border-yellow-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5 text-yellow-600" />
+                  Pro Tips
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">
+                    The sidebar and header are pre-built — focus on your main
+                    content area
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">
+                    Describe your feature idea clearly and specifically
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">
+                    All components use Rinsed's design system automatically
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">
+                    Be specific about car wash features and terminology
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Example Prompts */}
             <div className="space-y-6">
