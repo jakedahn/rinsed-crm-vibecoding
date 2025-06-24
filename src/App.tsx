@@ -14,6 +14,7 @@
 // This is for demonstration purposes only, don't overthink it.
 //
 
+import React from "react";
 import { AppLayout } from "@/components/layout/AppLayout";
 import {
   Card,
