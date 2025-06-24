@@ -26,10 +26,18 @@ This is a **Vite + React + TypeScript** application using **shadcn/ui** componen
 ### Component Usage
 
 All shadcn/ui components are pre-installed and available at:
+
 ```tsx
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 // ... and many more components available
 ```
@@ -82,6 +90,7 @@ When a user provides a feature request or prompt:
 5. **Remove the welcome screen completely** - don't keep any of the existing content
 
 Example:
+
 ```tsx
 // BEFORE (welcome screen)
 function App() {
@@ -109,6 +118,7 @@ function App() {
 ```
 
 **CRITICAL - DO NOT**:
+
 - Create new page files (e.g., TicketList.tsx, Dashboard.tsx)
 - Create new routes or pages
 - Install react-router-dom or any routing library
@@ -117,6 +127,7 @@ function App() {
 - Suggest creating multiple files
 
 **CRITICAL - ALWAYS**:
+
 - Rewrite the entire App.tsx file
 - Keep all implementation in App.tsx
 - Maintain the AppLayout wrapper
@@ -156,6 +167,41 @@ const members = [
 ];
 ```
 
+### 4. **Component-Specific Guidelines**
+
+To avoid common errors, follow these guidelines for specific shadcn/ui components.
+
+#### `<Select>` Component
+
+**CRITICAL:** The `<SelectItem>` component from `shadcn/ui` **MUST** have a `value` prop that is a non-empty string. An empty string (`value=""`) will cause the application to crash.
+
+- **DO NOT** use an empty string for a placeholder or default item. The placeholder is defined in the `<SelectValue>` component.
+- **ALWAYS** provide a unique, non-empty string for the `value` of every `SelectItem`.
+
+**Incorrect Usage (Causes Crash):**
+
+```tsx
+<SelectContent>
+  <SelectItem value="">Choose an option</SelectItem>{" "}
+  {/* 🚨 WRONG - value cannot be empty */}
+  <SelectItem value="option1">Option 1</SelectItem>
+</SelectContent>
+```
+
+**Correct Usage:**
+
+```tsx
+<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Choose an option" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="option1">Option 1</SelectItem>
+    <SelectItem value="option2">Option 2</SelectItem>
+  </SelectContent>
+</Select>
+```
+
 ## 🎨 Rinsed Design Patterns
 
 ### Analytics Dashboards
@@ -174,9 +220,11 @@ Include car wash KPIs:
 ### Real Rinsed Feature Request Examples:
 
 1. **Support Agent Dashboard**
+
    > "I'm building an AI support agent tool that uses AI voice and chat to answer questions from a knowledge base when people call or chat in. Our customers need a way to track performance of the ai tool to see how it's performing and if it's worth the investment. Can you make a dashboard that surfaces any errors that I might need to address, a few high level metrics, a chat sentiment summary, gives me a daily summary of how calls went that day, and a recommendation of steps my business should take based on calls and chats that have been coming in."
 
    Build a dashboard showing:
+
    - Error alerts for failed conversations
    - Metrics: calls handled, resolution rate, avg handling time
    - Sentiment analysis (positive/neutral/negative)
@@ -184,18 +232,22 @@ Include car wash KPIs:
    - AI-generated recommendations for improvements
 
 2. **Ticket List**
+
    > "Make a page that shows a list of open tickets. Users should have the ability to filter tickets by locations, actions, sources, date and users. The most important information on a ticket is the status and action (ie. cancel membership, change membership). Users need the ability to assign a ticket it to another user, select a resolution reason or add a note."
 
    Create a ticket management interface with:
+
    - Filterable list (location, action, source, date, user)
    - Status and action type prominently displayed
    - Quick actions: assign, resolve, add note
    - Bulk operations support
 
 3. **Customer Profile**
+
    > "Make a page that shows a customer profile to help me understand my businesses relationship with that person. I want to see contact information (name, email, phone), if they have redeemed any offers, LTV, what their current car wash plan is, if they've switched, paused or cancelled plans and any notes."
 
    Build a comprehensive member profile showing:
+
    - Contact details
    - Lifetime value (LTV)
    - Current plan and history
@@ -204,18 +256,22 @@ Include car wash KPIs:
    - Notes section
 
 4. **Checkout Forms**
+
    > "Make an easy way to create a checkout form. On the left of the screen the user should see a bunch of fields they need to fill out. On the right side they should see a preview of how this form will show up on a mobile device or desktop page."
 
    Create a form builder with:
+
    - Left panel: form configuration
    - Right panel: live preview (mobile/desktop toggle)
    - Fields: products, pricing, custom fields, limits
    - Real-time preview updates
 
 5. **Location Groups**
+
    > "Create a wizard that guides users through creating location groups. These are the fields needed: name, logo url, website url, address, billing email, twilio phone number, from email name, reply to email, signature, accepted customer auth type, terms of service..."
 
    Build a multi-step wizard for:
+
    - Basic info (name, logo, website)
    - Contact details (address, emails, phone)
    - Communication settings
@@ -223,9 +279,11 @@ Include car wash KPIs:
    - Progress indicator and validation
 
 6. **Scheduled Email**
+
    > "Make a page that helps someone create and schedule a marketing email. This should have an email editor that I can add my own branding to and include all of the basic fields needed to send an email. Maybe even some suggestions to help give me ideas."
 
    Create an email campaign builder with:
+
    - Visual email editor with branding
    - Template suggestions for car wash campaigns
    - Scheduling interface
