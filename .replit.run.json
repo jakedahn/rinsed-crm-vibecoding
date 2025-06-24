@@ -1,0 +1,8 @@
+{
+  "run": "npm run dev",
+  "build": "npm install",
+  "preview": {
+    "run": "npm run preview",
+    "build": "npm run build"
+  }
+}
