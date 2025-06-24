@@ -21,7 +21,6 @@ This is a **Vite + React + TypeScript** application using **shadcn/ui** componen
 - **Framework**: React 19.1.0 with TypeScript 5.8.3
 - **UI Components**: shadcn/ui components located in `@/src/components/ui/`
 - **Styling**: Tailwind CSS with custom theme configuration
-- **Routing**: Add React Router as needed for multi-page prototypes
 - **Icons**: Lucide React for consistent iconography
 
 ### Component Usage
@@ -76,10 +75,11 @@ function MemberDashboard() {
 
 When a user provides a feature request or prompt:
 
-1. **REPLACE the entire @src/App.tsx file**
-2. **Keep the AppLayout wrapper** - this maintains the navigation
-3. **Replace EVERYTHING inside `<AppLayout>`** with the requested feature
-4. **Remove the welcome screen completely** - don't keep any of the existing content
+1. **YOU MUST REWRITE @src/App.tsx** - This is the ONLY file you should modify
+2. **DO NOT CREATE NEW PAGES OR FILES** - Everything goes in App.tsx
+3. **Keep the AppLayout wrapper** - this maintains the navigation
+4. **Replace EVERYTHING inside `<AppLayout>`** with the requested feature
+5. **Remove the welcome screen completely** - don't keep any of the existing content
 
 Example:
 ```tsx
@@ -108,10 +108,19 @@ function App() {
 }
 ```
 
-**DO NOT**:
+**CRITICAL - DO NOT**:
+- Create new page files (e.g., TicketList.tsx, Dashboard.tsx)
+- Create new routes or pages
+- Install react-router-dom or any routing library
 - Keep any part of the welcome screen
 - Merge the new feature with existing content
-- Create a new file - always replace App.tsx
+- Suggest creating multiple files
+
+**CRITICAL - ALWAYS**:
+- Rewrite the entire App.tsx file
+- Keep all implementation in App.tsx
+- Maintain the AppLayout wrapper
+- Replace all content inside AppLayout
 
 ### 2. **Maintain Rinsed Branding**
 
