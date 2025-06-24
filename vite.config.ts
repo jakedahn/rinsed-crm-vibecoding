@@ -7,11 +7,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    host: true, // Listen on all addresses, including LAN and public
-    allowedHosts: [".replit.dev", "replit.dev"],
-    hmr: {
-      clientPort: 443,
-    },
+    host: true,
+    allowedHosts: ["localhost", ".replit.dev", ".ngrok-free.app"],
   },
   resolve: {
     alias: {
