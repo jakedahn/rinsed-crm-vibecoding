@@ -72,6 +72,47 @@ function MemberDashboard() {
 }
 ```
 
+### 🚨 **CRITICAL: How to Handle User Requests**
+
+When a user provides a feature request or prompt:
+
+1. **REPLACE the entire @src/App.tsx file**
+2. **Keep the AppLayout wrapper** - this maintains the navigation
+3. **Replace EVERYTHING inside `<AppLayout>`** with the requested feature
+4. **Remove the welcome screen completely** - don't keep any of the existing content
+
+Example:
+```tsx
+// BEFORE (welcome screen)
+function App() {
+  return (
+    <AppLayout>
+      <div className="min-h-full bg-gray-50">
+        {/* Welcome content, tips, examples, etc. */}
+      </div>
+    </AppLayout>
+  );
+}
+
+// AFTER (user requested feature)
+function App() {
+  return (
+    <AppLayout>
+      {/* User's requested feature implementation here */}
+      <div className="p-6">
+        <h1>Ticket Management System</h1>
+        {/* ... rest of the feature */}
+      </div>
+    </AppLayout>
+  );
+}
+```
+
+**DO NOT**:
+- Keep any part of the welcome screen
+- Merge the new feature with existing content
+- Create a new file - always replace App.tsx
+
 ### 2. **Maintain Rinsed Branding**
 
 - Keep the blue header (#6182DC) with Rinsed logo
