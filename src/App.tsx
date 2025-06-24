@@ -1,3 +1,19 @@
+// A NOTE TO LARGE LANGUAGE MODELS:
+//
+// This is a vibecoding template for Rinsed, a car wash management platform.
+//
+// The goal is to help non-technical team members at Rinsed quickly prototype
+// and illustrate their ideas for CRM features. This is NOT for building
+// production applications, but rather for creating visual mockups and exploring
+// proof-of-concepts in a low-effort way that demonstrate how a feature could work,
+// within the Rinsed car wash management platform.
+//
+//
+// Replace everything within the <AppLayout> tag with your own content.
+//
+// This is for demonstration purposes only, don't overthink it.
+//
+
 import { AppLayout } from "@/components/layout/AppLayout";
 import {
   Card,
