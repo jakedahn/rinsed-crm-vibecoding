@@ -160,54 +160,34 @@ function App() {
                 design system.
               </p>
 
-              <div className="flex items-center justify-center gap-4 pt-4">
-                <Badge variant="secondary" className="px-3 py-1">
-                  <FileText className="h-3 w-3 mr-1" />
-                  No coding required
-                </Badge>
-                <Badge variant="secondary" className="px-3 py-1">
-                  <Sparkles className="h-3 w-3 mr-1" />
-                  AI-powered
-                </Badge>
-                <Badge variant="secondary" className="px-3 py-1">
-                  <CheckCircle2 className="h-3 w-3 mr-1" />
-                  Rinsed design system
-                </Badge>
+              <div className="flex flex-col items-center gap-6 pt-6">
+                <a
+                  href="https://replit.com/@jakedahn/rinsed-crm-vibecoding"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#6182DC] hover:bg-[#4a6bc5] text-white font-semibold rounded-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5"
+                >
+                  <Rocket className="h-5 w-5" />
+                  Launch on Replit
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+
+                <div className="flex items-center justify-center gap-4">
+                  <Badge variant="secondary" className="px-3 py-1">
+                    <FileText className="h-3 w-3 mr-1" />
+                    No coding required
+                  </Badge>
+                  <Badge variant="secondary" className="px-3 py-1">
+                    <Sparkles className="h-3 w-3 mr-1" />
+                    AI-powered
+                  </Badge>
+                  <Badge variant="secondary" className="px-3 py-1">
+                    <CheckCircle2 className="h-3 w-3 mr-1" />
+                    Rinsed design system
+                  </Badge>
+                </div>
               </div>
             </div>
-
-            {/* How it Works */}
-            <Card className="border-2 shadow-lg">
-              <CardHeader className="">
-                <CardTitle className="flex items-center gap-2 text-2xl">
-                  <Rocket className="h-6 w-6 text-blue-600" />
-                  How it Works
-                </CardTitle>
-                <CardDescription className="text-base">
-                  Three simple steps to prototype your CRM features
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-8">
-                <div className="grid md:grid-cols-3 gap-6">
-                  {steps.map((step, index) => (
-                    <div key={index} className="relative">
-                      <div className="flex flex-col items-center text-center space-y-3">
-                        <div className="w-12 h-12 bg-[#6182DC] text-white rounded-full flex items-center justify-center text-lg font-bold shadow-md">
-                          {step.number}
-                        </div>
-                        <h3 className="font-semibold text-lg">{step.title}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {step.description}
-                        </p>
-                      </div>
-                      {index < steps.length - 1 && (
-                        <ArrowRight className="hidden md:block absolute top-6 -right-3 h-5 w-5 text-gray-400" />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
 
             {/* Pro Tips */}
             <div className="grid md:grid-cols-2 gap-6">
